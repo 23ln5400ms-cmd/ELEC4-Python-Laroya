@@ -1,15 +1,18 @@
-
 # Name: Heart C. Laroya
-# Section: IV-BSIT 
+# Section: IV-BSIT B
 # Activity: P2 - Custom Module
 # Date: November 24, 2026
 
-# Function to calculate the average
+def validate_grades(grades):
+    if not grades:
+        raise ValueError("Grades list cannot be empty.")
+
+
 def calculate_average(grades):
+    validate_grades(grades)
     return sum(grades) / len(grades)
 
 
-# Function to determine pass or fail
 def determine_status(average):
     if average >= 75:
         return "PASSED"
@@ -17,11 +20,11 @@ def determine_status(average):
         return "FAILED"
 
 
-# Function to get the highest grade
 def get_highest(grades):
+    validate_grades(grades)
     return max(grades)
 
 
-# Function to get the lowest grade
 def get_lowest(grades):
+    validate_grades(grades)
     return min(grades)
